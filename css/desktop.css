@@ -1,0 +1,112 @@
+/* ===== DESKTOP CSS - ESTILOS PARA DESKTOP (1024px ou mais) ===== */
+@media (min-width: 1024px) {
+  /* ==================== */
+  /* HEADER E NAVEGAÇÃO - DESKTOP */
+  /* ==================== */
+
+  .logo {
+    width: 80px;
+    margin: 20px 40px;
+  }
+
+  nav {
+    margin: 30px 40px;
+  }
+
+  .menu li {
+    margin: 0 20px;
+  }
+
+  .menu a {
+    font-size: 1.1rem;
+  }
+
+  /* ==================== */
+  /* PÁGINA INICIAL (INDEX) - DESKTOP */
+  /* ==================== */
+
+  .imagem-retangular {
+    height: 350px;
+  }
+
+  /* GRID DE DISCOS - DESKTOP 4 COLUNAS */
+  .discos-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .discografia-section {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+  /* BOTÃO DISCOGRAFIA - DESKTOP */
+  .btn-container {
+    max-width: 400px;
+  }
+
+  /* ==================== */
+  /* PÁGINA LOJA (MERCHANDISING) - DESKTOP */
+  /* ==================== */
+
+  /* GRID DE PRODUTOS - DESKTOP 4 COLUNAS */
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1200px;
+    padding: 0 40px;
+  }
+
+  .product img {
+    height: 200px;
+  }
+
+  .product figcaption {
+    font-size: 1rem;
+  }
+
+  /* ==================== */
+  /* PÁGINA DISCOGRAFIA - DESKTOP */
+  /* ==================== */
+
+  /* GRID DE ÁLBUNS - DESKTOP 5 COLUNAS */
+  .disco-grid {
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 1200px;
+  }
+
+  /* ==================== */
+  /* PÁGINA AGENDA - DESKTOP */
+  /* ==================== */
+
+  .agenda-grid {
+    gap: 50px;
+    padding: 0 40px;
+  }
+
+  .evento-img {
+    height: 250px;
+  }
+
+  .evento-info {
+    padding: 30px;
+  }
+
+  .evento h2 {
+    font-size: 1.5rem;
+  }
+
+  /* ==================== */
+  /* PÁGINA CONTACTOS - DESKTOP */
+  /* ==================== */
+
+  .page-container {
+    padding: 40px;
+  }
+
+  .contact-form {
+    padding: 40px;
+  }
+
+  .form-group label {
+    font-size: 1.1rem;
+  }
+}

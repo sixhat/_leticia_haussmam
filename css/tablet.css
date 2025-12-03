@@ -1,0 +1,202 @@
+/* ===== TABLET CSS - ESTILOS PARA TABLET (768px ou mais) ===== */
+@media (min-width: 768px) {
+  /* ==================== */
+  /* HEADER E NAVEGAÇÃO - TABLET */
+  /* ==================== */
+
+  header {
+    height: 120px;
+  }
+
+  .logo {
+    width: 80px;
+    margin: 20px 40px;
+  }
+
+  .hamb {
+    display: none;
+  }
+
+  nav {
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    margin: 20px;
+    margin-top: 30px;
+    transition: none;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+  }
+
+  .menu li {
+    margin: 0 15px;
+  }
+
+  .menu a {
+    font-size: 1rem;
+  }
+
+  .side-menu:checked ~ nav {
+    height: auto;
+  }
+
+  /* ==================== */
+  /* PÁGINA INICIAL (INDEX) - TABLET */
+  /* ==================== */
+
+  .imagens-com-titulo {
+    padding: 20px;
+  }
+
+  .imagens-container {
+    gap: 20px;
+  }
+
+  .imagem-retangular {
+    height: 300px;
+    min-width: 200px;
+  }
+
+  .titulo-container {
+    padding: 20px;
+  }
+
+  /* GRID DE DISCOS - TABLET 3 COLUNAS */
+  .discos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* BOTÃO DISCOGRAFIA - TABLET */
+  .btn-container {
+    max-width: 350px;
+  }
+
+  /* SEÇÃO SOUNDCLOUD - TABLET */
+  .soundcloud-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 2rem;
+  }
+
+  .left-content {
+    order: 1;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .right-content {
+    order: 2;
+    grid-column: 2;
+    grid-row: 1 / span 2; /* Imagem ocupa as duas linhas */
+  }
+
+  .bottom-content {
+    order: 3;
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .right-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* ==================== */
+  /* PÁGINA LOJA (MERCHANDISING) - TABLET */
+  /* ==================== */
+
+  /* GRID DE PRODUTOS - TABLET 2 COLUNAS */
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 700px;
+    padding: 0 20px;
+  }
+
+  .product {
+    padding: 15px;
+  }
+
+  .product img {
+    height: 300px;
+  }
+
+  .product figcaption {
+    font-size: 0.9rem;
+  }
+
+  /* ==================== */
+  /* PÁGINA DISCOGRAFIA - TABLET */
+  /* ==================== */
+
+  /* GRID DE ÁLBUNS - TABLET 2 COLUNAS */
+  .disco-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ==================== */
+  /* PÁGINA AGENDA - TABLET */
+  /* ==================== */
+
+  /* GRID DE EVENTOS - TABLET 2 COLUNAS */
+  .agenda-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  .evento-img {
+    height: 220px;
+  }
+
+  .evento-info {
+    padding: 25px;
+  }
+
+  .evento h2 {
+    font-size: 1.4rem;
+  }
+
+  /* ==================== */
+  /* PÁGINA CONTACTOS - TABLET */
+  /* ==================== */
+
+  .page-title {
+    font-size: 2.5rem;
+  }
+
+  .contact-form {
+    max-width: 600px;
+    padding: 30px;
+  }
+
+  .submit-btn {
+    width: auto;
+    min-width: 200px;
+  }
+
+  /* ==================== */
+  /* ELEMENTOS GLOBAIS - TABLET */
+  /* ==================== */
+
+  .footer-social {
+    gap: 1.5rem;
+  }
+
+  .social-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .footer-text {
+    font-size: 0.9rem;
+  }
+}

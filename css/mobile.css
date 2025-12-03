@@ -1,0 +1,602 @@
+/* ===== MOBILE CSS - ESTILOS BASE ===== */
+
+/* FONTES PERSONALIZADAS */
+@font-face {
+  font-family: "DarkWorld";
+  src: url("../fonts/DarkWorld.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ZenMaruGothic";
+  src: url("../fonts/ZenMaruGothic-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ==================== */
+/* ELEMENTOS GLOBAIS */
+/* ==================== */
+
+body {
+  font-family: "ZenMaruGothic", sans-serif;
+}
+
+h1,
+h2 {
+  font-family: "DarkWorld", sans-serif;
+}
+
+/* CONTEÚDO PRINCIPAL */
+main {
+  padding: 20px;
+  min-height: 400px;
+  position: relative;
+  z-index: 5;
+}
+
+main p,
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6 {
+  color: var(--white);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.page {
+  margin: 0;
+  padding: 0;
+  background-image: url("../img/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  align-items: flex-start;
+  color: var(--white);
+  text-align: center;
+}
+
+/* ==================== */
+/* HEADER E NAVEGAÇÃO */
+/* ==================== */
+
+/* HEADER BASE - ESTILOS COMUNS A TODOS OS HEADERS */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+/* HEADER DA PÁGINA INICIAL */
+.index-header {
+  background-color: transparent;
+  height: auto;
+  position: relative;
+}
+
+/* BACKGROUND ESPECIAL APENAS NA PÁGINA INICIAL */
+.index-hero {
+  background-image: url("../img/header.png");
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* PÁGINA PRINCIPAL - FUNDO PRETO */
+.index-page {
+  background-color: var(--black);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--white);
+}
+
+/* TÍTULO CENTRALIZADO */
+.page-title-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--white);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  display: block;
+  margin: 0;
+  z-index: 15;
+}
+
+/* GARANTIR QUE O CONTEÚDO PRINCIPAL FIQUE ABAIXO DO HEADER HERO */
+.index-page .page-container {
+  margin-top: 600px;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+  margin: 10px 20px;
+  z-index: 20;
+}
+
+/* MENU HAMBURGUER */
+.hamb {
+  cursor: pointer;
+  margin: 20px;
+  padding: 20px;
+  z-index: 30;
+}
+
+.hamb-line {
+  background: var(--white);
+  display: block;
+  height: 3px;
+  width: 26px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.hamb-line::before,
+.hamb-line::after {
+  background: var(--white);
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 26px;
+  transition: all 0.3s ease;
+}
+
+.hamb-line::before {
+  top: -8px;
+}
+
+.hamb-line::after {
+  top: 8px;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  overflow: hidden;
+  transition: height 0.4s ease;
+  z-index: 25;
+}
+
+.menu {
+  list-style: none;
+  padding: 100px 0 0 0;
+  text-align: center;
+  margin: 0;
+}
+
+.menu li {
+  margin: 30px 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: var(--gray);
+}
+
+.side-menu {
+  display: none;
+}
+
+.side-menu:checked ~ nav {
+  height: 100vh;
+}
+
+.side-menu:checked + .hamb .hamb-line {
+  background: transparent;
+}
+
+.side-menu:checked + .hamb .hamb-line::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.side-menu:checked + .hamb .hamb-line::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+body:has(.side-menu:checked) {
+  overflow: hidden;
+}
+
+/* ==================== */
+/* PÁGINA INICIAL (INDEX) */
+/* ==================== */
+
+/* SEÇÃO IMAGENS COM TÍTULO */
+.imagens-com-titulo {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.imagens-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.imagem-retangular {
+  height: 180px;
+  flex: 1;
+  min-width: 120px;
+  max-width: 500px;
+  object-fit: cover;
+  position: relative;
+}
+
+.titulo-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  pointer-events: none;
+  z-index: 2;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.texto-the {
+  position: absolute;
+  top: -5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.texto-hunter {
+  color: white;
+}
+
+.texto-nightmare {
+  color: white;
+}
+
+/* SEÇÃO DISCOGRAFIA */
+.discografia-section {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* GRID DE DISCOS - MOBILE 2 COLUNAS */
+.discos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.disco-img {
+  width: 100%;
+}
+
+/* SEÇÃO SOUNDCLOUD */
+.soundcloud-section {
+  padding: 2rem 1rem;
+  overflow: visible;
+}
+
+.soundcloud-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.left-content {
+  order: 1;
+} /* Primeira parte do texto */
+.right-content {
+  order: 2;
+} /* Imagem */
+.bottom-content {
+  order: 3;
+} /* Segunda parte do texto + SoundCloud */
+
+.left-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.text-content {
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.player-content {
+  flex: 0 0 auto;
+}
+
+.player-content iframe {
+  height: 150px;
+}
+
+.right-content {
+  height: 100%;
+}
+
+.right-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: none;
+}
+
+.text-part-1,
+.text-part-2 {
+  color: var(--white);
+  text-align: justify;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  margin-bottom: 1.5rem;
+}
+
+.text-part-1 br,
+.text-part-2 br {
+  margin-bottom: 0.8rem;
+  display: block;
+  content: "";
+}
+
+/* CONTAINER DO BOTÃO DISCOGRAFIA */
+.btn-container {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.submit-btn {
+  background-color: var(--purple);
+  color: white;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  width: 100%;
+  backdrop-filter: blur(5px);
+}
+
+.submit-btn:hover {
+  background-color: var(--purple-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+/* ==================== */
+/* PÁGINA LOJA (MERCHANDISING) */
+/* ==================== */
+
+/* GRID DE PRODUTOS - MOBILE 2 COLUNAS */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 0 10px;
+}
+
+.product {
+  text-align: center;
+}
+
+.product img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ==================== */
+/* PÁGINA DISCOGRAFIA */
+/* ==================== */
+
+/* GRID DE ÁLBUNS - MOBILE 2 COLUNAS */
+.disco-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
+/* ==================== */
+/* PÁGINA AGENDA */
+/* ==================== */
+
+/* GRID DE EVENTOS - MOBILE 1 COLUNA */
+.agenda-grid {
+  display: grid;
+  grid-template-columns: 2fr;
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.evento {
+  text-align: center;
+}
+
+.evento-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.evento-info {
+  padding: 20px;
+}
+
+.evento h2 {
+  color: var(--white);
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  font-size: 1.3rem;
+}
+
+.evento time {
+  font-weight: bold;
+  color: var(--white);
+  display: block;
+  margin-bottom: 8px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  font-size: 1.1rem;
+}
+
+.evento p {
+  color: var(--white);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  margin: 5px 0;
+}
+
+/* ==================== */
+/* PÁGINA CONTACTOS */
+/* ==================== */
+
+/* CONTAINER DA PÁGINA */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  z-index: 5;
+}
+
+.page-title {
+  text-align: center;
+  margin: 40px 0;
+  font-size: 2rem;
+  color: var(--white);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* FORMULÁRIO DE CONTACTO */
+.contact-form {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--white);
+  font-size: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* INPUTS TRANSPARENTES */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  backdrop-filter: blur(5px);
+}
+
+/* Placeholder em branco semi-transparente */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--purple);
+  box-shadow: 0 0 8px var(--purple-light);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* FOOTER TRANSPARENTE */
+footer {
+  background-color: transparent;
+  padding: 2rem 1rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.social-link {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  width: 32px;
+  height: 32px;
+}
+
+.social-link:hover {
+  transform: scale(1.2);
+}
+
+/* Estilo para os SVGs */
+.social-link svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.footer-text {
+  color: var(--white);
+  font-size: 1rem;
+  margin: 0;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
